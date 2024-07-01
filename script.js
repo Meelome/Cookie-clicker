@@ -6,13 +6,15 @@ document.getElementById('cookie').addEventListener('click', () => {
         clickCount++;
         document.getElementById('clickCount').textContent = clickCount;
         canClick = false;
-        document.getElementById('timerMessage').textContent = "Подождите 30 секунд перед следующим кликом.";
+        document.getElementById('timerMessage').textContent = "Подождите 3 секунд перед следующим кликом.";
 
         setTimeout(() => {
             canClick = true;
             document.getElementById('timerMessage').textContent = "";
-        }, 30000); // 30 секунд = 30000 миллисекунд
+        }, 3000); // 30 секунд = 3000 миллисекунд
     } else {
         document.getElementById('timerMessage').textContent = "Подождите 30 секунд перед следующим кликом.";
     
+ 
+
  
