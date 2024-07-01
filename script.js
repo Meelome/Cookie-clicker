@@ -14,5 +14,5 @@ document.getElementById('cookie').addEventListener('click', () => {
         }, 30000); // 30 секунд = 30000 миллисекунд
     } else {
         document.getElementById('timerMessage').textContent = "Подождите 30 секунд перед следующим кликом.";
-    }
-});
+    
+ 
