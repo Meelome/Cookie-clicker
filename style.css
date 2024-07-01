@@ -1,40 +1,3 @@
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
-.cookie-container {
-    
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-}
-
-.cookie {
-    width: 200px;
-    height: 200px;
-    background: #d2691e;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-    box-shadow: inset 0 0 10px #8b4513;
-}
-
-.cookie::before, .cookie::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
     background: #8b4513;
 }
 
@@ -62,3 +25,5 @@ body {
     align-items: center;
     justify-content: center;
 
+
+ 
