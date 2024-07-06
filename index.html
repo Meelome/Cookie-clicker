@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Clicker</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Cookie Clicker</h1>
-    <div class="cookie-container">
-        <div class="cookie" id="cookie"></div>
-    </div>
-    <p>Clicks: <span id="clickCount">0</span></p>
-    <script src="script.js"></script>
-</body>
-</html>
+// Создаем элемент с изображением капибары
+const capybaraImage = document.createElement('img');
+capybaraImage.src = 'https://i.imgur.com/2w0r3oA.jpg';
+document.body.appendChild(capybaraImage);
 
- 
+// Создаем элемент для отображения счетчика кликов
+const clickCounter = document.createElement('p');
+clickCounter.textContent = 'Количество кликов: 0';
+document.body.appendChild(clickCounter);
 
- 
+let clicks = 0;
+let canClick = true;
 
- 
+// Функция для обработки кликов
+function handleClick() {
+  if (canClick) {
+    clicks++;
+    clickCounter.textContent = `Количество кликов: ${clicks}`;
+    canClick = false;
+    setTimeout(() => {
+      canClick = true;
+    }, 30000); // Задержка в 30 секунд
+  }
+}
+
+// Добавляем обработчик кликов на изображение капибары
+capybaraImage.addEventListener('click', handleClick);
