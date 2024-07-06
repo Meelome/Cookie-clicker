@@ -1,17 +1,21 @@
-// Создаем элемент с изображением капибары
-const capybaraImage = document.createElement('img');
-capybaraImage.src = 'https://i.imgur.com/2w0r3oA.jpg';
-document.body.appendChild(capybaraImage);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capybara Clicker</title>
+</head>
+<body>
+<img src="https://i.imgur.com/2w0r3oA.jpg" id="capybara-image" style="cursor: pointer;">
+<p id="click-counter">Количество кликов: 0</p>
 
-// Создаем элемент для отображения счетчика кликов
-const clickCounter = document.createElement('p');
-clickCounter.textContent = 'Количество кликов: 0';
-document.body.appendChild(clickCounter);
-
+<script>
 let clicks = 0;
 let canClick = true;
+const clickCounter = document.getElementById('click-counter');
 
-// Функция для обработки кликов
+document.getElementById('capybara-image').addEventListener('click', handleClick);
+
 function handleClick() {
   if (canClick) {
     clicks++;
@@ -22,6 +26,6 @@ function handleClick() {
     }, 30000); // Задержка в 30 секунд
   }
 }
-
-// Добавляем обработчик кликов на изображение капибары
-capybaraImage.addEventListener('click', handleClick);
+</script>
+</body>
+</html>
