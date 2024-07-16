@@ -1,31 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capybara Clicker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Green Clock with Link</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .link {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: #00ff00;
+        }
+        .clock {
+            font-size: 48px;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00;
+        }
+    </style>
 </head>
 <body>
-<img src="https://images.app.goo.gl/rjdDze1RD7aTf7ZG8" id="capybara-image" style="cursor: pointer;">
-<p id="click-counter">Количество кликов: 0</p>
+    <a href="https://boosty.to/meelome" class="link">Visit Meelome on Boosty</a>
+    <div class="clock" id="clock">00:00:00</div>
 
-<script>
-let clicks = 0;
-let canClick = true;
-const clickCounter = document.getElementById('click-counter');
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
 
-document.getElementById('capybara-image').addEventListener('click', handleClick);
-
-function handleClick() {
-  if (canClick) {
-    clicks++;
-    clickCounter.textContent = `Количество кликов: ${clicks}`;
-    canClick = false;
-    setTimeout(() => {
-      canClick = true;
-    }, 30000); // Задержка в 30 секунд
-  }
-}
-</script>
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to set the clock immediately
+    </script>
 </body>
 </html>
